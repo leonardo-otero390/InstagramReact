@@ -1,0 +1,539 @@
+body {
+    background: #fafafa;
+    font-family: 'Roboto', sans-serif;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    color: #8e8e8e;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+button{
+    color: #B2DFFC;
+    background-color: inherit;
+    border: none;
+}
+button:hover{
+    color: #0095F6;
+    transition: 300ms;
+}
+input:focus {
+    outline: none;
+}
+.top {
+    display: none;
+}
+
+.side-bar {
+    display: none;
+}
+
+.mobile-top {
+    height: 54px;
+    width: 100vw;
+
+    background-color: #ffffff;
+    border: 1px solid #DBDBDB;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    z-index: 1;
+}
+
+.icon {
+    margin: auto 5%;
+
+    font-size: 20px;
+}
+
+.container {
+    width: 100%;
+    margin-top: 54px;
+    margin-bottom: 54px;
+}
+
+
+.stories {
+    height: 118px;
+    border: 1px solid #DBDBDB;
+
+    display: flex;
+    justify-content: flex-start;
+
+    position: relative;
+
+    overflow: scroll;
+
+    /* hide scrollbar but allow scrolling */
+    -ms-overflow-style: none;
+    /* for Internet Explorer, Edge */
+    scrollbar-width: none;
+    /* for Firefox */
+    overflow-y: scroll;
+}
+
+.stories::-webkit-scrollbar {
+    display: none;
+    /* for Chrome, Safari, and Opera */
+}
+
+.setinha {
+    display: none;
+}
+
+.story {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: space-around;
+
+    margin: auto 2%;
+}
+
+.avatar {
+    width: 56px;
+    height: 56px;
+}
+
+.avatar img {
+    width: 100%;
+    height: 100%;
+
+    border-radius: 100%;
+}
+
+.story .avatar {
+
+    background-image: url('../content/images/stories_background.jpg');
+    background-size: 100% 100%;
+    border-radius: 100%;
+
+    margin-bottom: 5%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.story .avatar img {
+    width: 85%;
+    height: 85%;
+}
+
+.story .user-name {
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    width: 56px;
+}
+
+.user-name {
+    font-size: 12px;
+    margin-top: 8px;
+}
+.sugerido .user-name a:hover{
+    text-decoration: underline;
+}
+.post .top-bar a:hover {
+    text-decoration: underline;
+}
+.hover-under:hover{
+    text-decoration: underline;
+}
+.comments a strong:hover{
+    text-decoration: underline;
+}
+.post {
+    background-color: #ffffff;
+
+    margin-bottom: 60px;
+
+    border: 1px solid #DBDBDB;
+}
+
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 14px;
+}
+
+.top-bar .user {
+    display: flex;
+    align-items: center;
+
+}
+
+.top-bar .user-name {
+    font-size: 14px;
+    margin-top: 0;
+}
+
+.top-bar .avatar {
+    width: 32px;
+    height: 32px;
+    margin: 10px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+
+
+}
+
+.content img {
+    width: 100%;
+}
+
+.content video {
+    max-width: 100%;
+}
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 8px 8px;
+}
+
+.icons ion-icon {
+    margin: auto 5px auto 0;
+
+}
+
+
+.interactions {
+    font-size: 14px;
+
+
+    display: flex;
+    align-items: center;
+
+    margin: 8px;
+}
+
+.interactions .avatar {
+    width: 20px;
+    height: 20px;
+
+    margin: auto 5px auto 0;
+}
+.comments{
+
+    margin: auto 8px;
+
+    font-size: 14px;
+}
+.comment{
+display: flex;
+
+position: relative;
+}
+.comment p{
+    max-width: 50%;
+    margin-left: 8px;
+    margin-bottom: 8px;
+    white-space: nowrap;
+    overflow:hidden;
+    text-overflow: ellipsis;
+}
+.comment .icon{
+    font-size: 14px;
+    margin: 0;
+
+    position: absolute;
+    right: 0;
+}
+.time{
+    font-size: 10px;
+    margin-bottom: 8px;
+}
+.comment-box{
+    height: 32px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border-top: 1px solid #DBDBDB;
+}
+.comment-box input {
+    width: calc(100% - 70px);
+    margin-left: 8px;
+    background: inherit;
+    border: none;
+}
+
+.comment-box input::placeholder {
+    text-align:start;
+}
+
+
+.feet-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #ffffff;
+
+    height: 54px;
+    width: 100vw;
+
+    position: fixed;
+    bottom: 0;
+    left: 0;
+
+}
+
+/* Aqui começa o css para sem sidebar */
+@media (min-width: 614px) {
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .mobile-top {
+        display: none;
+    }
+
+    .top-container {
+        width: 100vw;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        z-index: 1;
+
+        border: 1px solid #DBDBDB;
+    }
+
+    .top {
+
+        height: 54px;
+        width: 100%;
+
+        background-color: #fff;
+
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
+
+    .top >div {
+        display: flex;
+    }
+
+    .top .icon {
+        margin: auto 8px;
+    }
+
+    .left-top .icon {
+        border-right: 1px solid #DBDBDB;
+        padding-right: 8px;
+    }
+
+    .right-top {
+        margin-right: 8px;
+    }
+
+    .container {
+        max-width: 100%;
+
+        margin-top: 88px;
+        margin-bottom: 0;
+
+        display: flex;
+        justify-content: center;
+    }
+
+    .conteudo {
+        max-width: 100%;
+        width: 614px;
+
+        margin-bottom: 0 auto;
+    }
+
+    .setinha {
+        display: initial;
+        position: absolute;
+        right: 5px;
+        top: 30%;
+    }
+
+    .setinha ion-icon {
+        font-size: 26px;
+        color: #fff;
+        border-radius: 100%;
+        box-shadow: -2px 2px 10px lightgray;
+    }
+
+    .post:last-child {
+        margin-bottom: 0;
+    }
+
+    input {
+        width: 215px;
+        background: #FAFAFA;
+        border: 1px solid #DBDBDB;
+
+    }
+
+    input::placeholder {
+        text-align: center;
+    }
+
+    input:focus::placeholder {
+        text-align: start;
+    }
+
+    .stories {
+        width: 100%;
+
+        margin-bottom: 24px;
+
+        background: #fff;
+    }
+
+    .feet-bar {
+        display: none;
+    }
+
+    video {
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 935px) {
+    .top-container {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: #fff;
+        width: 100vw;
+    }
+
+    .top-container .top {
+        width: 935px;
+    }
+
+    .container {
+        width: 935px;
+        display: flex;
+        justify-content: space-between;
+
+
+    }
+
+    .fixa-side-bar {
+        width: 293px;
+    }
+
+    .side-bar {
+        display: flex;
+        flex-direction: column;
+
+
+        position: sticky;
+        top: 88px;
+       
+    }
+
+    .side-bar .user {
+        display: flex;
+        align-items: center;
+
+        margin-top: 16px;
+    }
+
+    .side-bar .user .user-name div {
+        margin: 8px 0;
+
+        font-size: 14px;
+    }
+
+    .side-bar .user .avatar {
+        margin: auto 8px auto 0;
+    }
+
+    .inicio-sugeridos {
+
+        margin-top: 8px;
+        display: flex;
+        justify-content: space-between;
+
+        font-size: 14px;
+    }
+
+    .sugerido {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        margin-top: 8px;
+    }
+
+    .sugerido .user {
+        margin: 0;
+    }
+
+    .sugerido .seguir a {
+        color: #0095f6;
+    }
+
+    .sugerido .avatar {
+        width: 32px;
+        height: 32px;
+    }
+
+    .sugerido .user-name {
+        margin: 0;
+    }
+
+    .sugerido .user-name .status {
+        font-size: 11px;
+    }
+
+    .left-top {
+        margin-left: 0;
+    }
+
+    .right-top {
+        margin-right: 0;
+    }
+
+    .sobre {
+        font-size: 11px;
+        color: #8e8e8e;
+    }
+
+    .sobre p {
+        margin: 16px 0;
+    }
+}
