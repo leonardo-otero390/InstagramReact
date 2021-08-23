@@ -27,7 +27,9 @@ export default function Sidebar(props) {
                         <em>Sugestões para você</em>
                         <a href=""> <strong> Ver tudo </strong></a>
                     </div>
+                    <ul>
                     {sugeridos.map(sugerido => <Sugerido user={sugerido.name} avatar={sugerido.avatar} status={sugerido.status}/>)}                 
+                    </ul>
                     <div class="sobre">
                         <p>Sobre • Ajuda • Imprensa • API • Carreiras • Privacidade •
                             Termos • Localizações • Contas mais relevantes • Hashtags •
