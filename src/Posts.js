@@ -79,21 +79,21 @@ const posts = [
 export default function Posts() {
 
     return (
-        <div class="posts">
+        <ul class="posts">
             {posts.map(post => <Post infos={post} />)}
-        </div>
+        </ul>
     );
 
 }
 function Post(props) {
     return (
-        <div class="post">
+        <li class="post">
             <Topbar user={props.infos.user} />
             <div class="content">
                 {props.infos.content.isImg ? <img src={props.infos.content.imgSrc} /> : <video autoPlay={true} muted><source src={props.infos.content.videoSrc.src1.src} type={props.infos.content.videoSrc.src1.type} /><source src={props.infos.content.videoSrc.src2.src} type={props.infos.content.videoSrc.src2.type} />Seu navegador não suporta</video>}
             </div>
             <Footer interactions={props.infos.interactions} time={props.infos.time} />
-        </div>
+        </li>
     );
 }
 function Topbar(props) {
@@ -151,19 +151,19 @@ function Footer(props) {
 }
 function Comments(props) {
     return (
-        <div class="comments">
+        <ul class="comments">
             {props.comments.map(comment => <Comment user={comment.user} comment={comment.comment} />)}
-        </div>
+        </ul>
     );
 }
 function Comment(props) {
     return (
-        <div class="comment">
+        <li class="comment">
             <a href="#"><strong>{props.user}</strong></a>
             <p>{props.comment}</p>
             <div class="icon"><a href="#">
                 <ion-icon name="heart-outline"></ion-icon>
             </a></div>
-        </div>
+        </li>
     );
 }
