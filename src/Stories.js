@@ -17,13 +17,11 @@ export default function Stories() {
         </ul>
     );
 }
-
-
 function Story(props) {
 return (
         <li class="story">
             <a href="#">
-                <div class="avatar"><img src={props.avatar} alt="" /></div>
+                <div class="avatar"><img src={props.avatar} alt="foto de perfil" /></div>
             </a>
             <a href="#">
                 <div class="user-name">{props.user}</div>

@@ -32,7 +32,7 @@ const posts = [
                                                     laboriosam corrupti eveniet nam consequuntur dolorem iure! Praesentium, magni?`
             }]
         },
-        time: '00:00'
+        data: new Date('August 23, 2021 5:25:00')
     },
     {
         user: {
@@ -71,28 +71,51 @@ const posts = [
                                                     laboriosam corrupti eveniet nam consequuntur dolorem iure! Praesentium, magni?`
             }]
         },
-        time: '00:00'
+        data: new Date('December 17, 1995 03:24:00')
     }
 ];
 
+const today = new Date();
 
 export default function Posts() {
-
     return (
         <ul class="posts">
             {posts.map(post => <Post infos={post} />)}
         </ul>
     );
-
+}
+function timeCalculator(time) {
+    if (time.getFullYear() !== today.getFullYear()) {
+        return `Há ${today.getFullYear() - time.getFullYear()} anos`;
+    }
+    if (time.getMonth() !== today.getMonth()) {
+        return `Há ${today.getMonth() - time.getMonth()} meses`;
+    }
+    if (time.getDate() !== today.getDate()) {
+        return `Há ${today.getDate() - time.getDate()} dias`;
+    }
+    if (time.getHours() !== today.getHours()) {
+        return `Há ${today.getHours() - time.getHours()} horas`;
+    }
+    if (time.getMinutes() - time.getMinutes()) {
+        return `Há ${time.getMinutes() - time.getMinutes()} minutos`;
+    }
+    if (time.getSeconds() !== today.getSeconds) {
+        return `${time.getMinutes() - time.getMinutes()} segundos`;
+    }
 }
 function Post(props) {
+
+    const time = props.infos.data;
+    const timeText = timeCalculator(time);
+    
     return (
         <li class="post">
             <Topbar user={props.infos.user} />
             <div class="content">
                 {props.infos.content.isImg ? <img src={props.infos.content.imgSrc} /> : <video autoPlay={true} muted><source src={props.infos.content.videoSrc.src1.src} type={props.infos.content.videoSrc.src1.type} /><source src={props.infos.content.videoSrc.src2.src} type={props.infos.content.videoSrc.src2.type} />Seu navegador não suporta</video>}
             </div>
-            <Footer interactions={props.infos.interactions} time={props.infos.time} />
+            <Footer interactions={props.infos.interactions} time={timeText} />
         </li>
     );
 }

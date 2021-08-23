@@ -46,7 +46,6 @@ function Sugerido(props) {
             <div class="user">
                 <div class="avatar">
                     <a href="#"><img src={props.avatar} alt="foto de perfil" /></a>
-
                 </div>
                 <div class="user-name">
                     <div>

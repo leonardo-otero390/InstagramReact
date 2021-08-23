@@ -264,6 +264,7 @@ position: relative;
 }
 .time{
     font-size: 10px;
+    margin-left: 8px;
     margin-bottom: 8px;
 }
 .comment-box{
@@ -355,6 +356,7 @@ position: relative;
     }
 
     .right-top {
+        display: flex;
         margin-right: 8px;
     }
 
