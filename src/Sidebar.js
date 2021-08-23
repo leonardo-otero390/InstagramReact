@@ -8,7 +8,6 @@ const sugeridos = [];
 for (let i = 0; i <5;i++){
     sugeridos.push(sugerido);
 }
-
 export default function Sidebar(props) {
     return (
         <aside class="fixa-side-bar">

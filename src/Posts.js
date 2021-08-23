@@ -1,3 +1,5 @@
+import AnchorIcon from "./AnchorIcon";
+
 const posts = [
     {
         user: {
@@ -104,11 +106,12 @@ function timeCalculator(time) {
         return `${time.getMinutes() - time.getMinutes()} segundos`;
     }
 }
+
 function Post(props) {
 
     const time = props.infos.data;
     const timeText = timeCalculator(time);
-    
+
     return (
         <li class="post">
             <Topbar user={props.infos.user} />
@@ -130,31 +133,22 @@ function Topbar(props) {
                     <div class="user-name">{props.user.name}</div>
                 </a>
             </div>
-            <div class="icon"><a href="#">
-                <ion-icon name="ellipsis-horizontal"></ion-icon>
-            </a></div>
+            <div class="icon">
+                <AnchorIcon icon="ellipsis-horizontal" />
+            </div>
 
         </div>
     );
 }
 function Footer(props) {
+    const iconsInteragir = ["heart-outline", "chatbubble-outline", "paper-plane-outline"];
     return (
         <div class="footer">
             <div class="icons">
                 <div class="interagir">
-                    <a href="#">
-                        <ion-icon name="heart-outline"></ion-icon>
-                    </a>
-                    <a href="#">
-                        <ion-icon name="chatbubble-outline"></ion-icon>
-                    </a>
-                    <a href="#">
-                        <ion-icon name="paper-plane-outline"></ion-icon>
-                    </a>
+                    {iconsInteragir.map((icon) => <AnchorIcon icon={icon} />)}
                 </div>
-                <a href="#">
-                    <ion-icon name="bookmark-outline"></ion-icon>
-                </a>
+                <AnchorIcon icon="bookmark-outline" />
             </div>
             <div class="interactions">
                 <div class="avatar">
@@ -184,9 +178,9 @@ function Comment(props) {
         <li class="comment">
             <a href="#"><strong>{props.user}</strong></a>
             <p>{props.comment}</p>
-            <div class="icon"><a href="#">
-                <ion-icon name="heart-outline"></ion-icon>
-            </a></div>
+            <div class="icon">
+                <AnchorIcon icon="heart-outline" />
+            </div>
         </li>
     );
 }

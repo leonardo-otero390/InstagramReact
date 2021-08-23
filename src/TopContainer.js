@@ -1,3 +1,5 @@
+import AnchorIcon from "./AnchorIcon";
+
 const icons = ['paper-plane-outline', 'compass-outline', 'heart-outline', 'person-outline'];
 
 export default function TopContainer() {
@@ -5,15 +7,13 @@ export default function TopContainer() {
         <div class="top">
             <div class="left-top">
                 <div class="icon">
-                    <a href="#">
-                        <ion-icon name="logo-instagram"></ion-icon>
-                    </a>
+                    <AnchorIcon icon="logo-instagram" />
                 </div>
                 < a href="#"><img src="../content/images/logo.png" alt="instagram logo" /> </a>
             </div>
             <input type="text" placeholder="Pesquisar" />
             <ul class="right-top">
-                {icons.map(icon => <li class="icon"><a href="#"><ion-icon name={icon}></ion-icon></a></li>)}
+                {icons.map(icon => <li class="icon"><AnchorIcon icon={icon} /></li>)}
             </ul>
         </div>
 
